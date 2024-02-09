@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Crop Search</string>
+    <string name="notify_record">Capture</string>
+    <string name="notify_shutdown">Shutdown</string>
+</resources>
