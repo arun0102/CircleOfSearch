@@ -2,6 +2,12 @@
 
 This app is based on Samsung and Google's Circle to Search feature. Because root app access level permissions are not available, a pop-up is shown to get screen recording permission each time.
 
+Samsung
+https://www.youtube.com/watch?v=Zj78u6WxXS0
+
+Google
+https://www.youtube.com/watch?v=WdbeqSQjZI8
+
 
 <img src="/CircleToCrop.gif" width="300" height="668"/>
 
