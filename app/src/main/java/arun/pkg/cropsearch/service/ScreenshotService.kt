@@ -37,7 +37,7 @@ import java.io.IOException
 
 class ScreenshotService : Service() {
 
-    private val CHANNEL_WHATEVER = "channel_whatever"
+    private val CHANNEL_CROP_SEARCH = "channel_cropsearch"
     private val NOTIFY_ID = 9906
     val EXTRA_RESULT_CODE: String = "resultCode"
     val EXTRA_RESULT_INTENT: String = "resultIntent"
@@ -111,7 +111,7 @@ class ScreenshotService : Service() {
     override fun onStartCommand(i: Intent?, flags: Int, startId: Int): Int {
         resultCode = i?.getIntExtra(EXTRA_RESULT_CODE, 1337)
         resultData = i?.getParcelableExtra(EXTRA_RESULT_INTENT)
-        foregroundify()
+        setForegroundNotification()
         return (START_NOT_STICKY)
     }
 
@@ -244,18 +244,18 @@ class ScreenshotService : Service() {
         )
     }
 
-    private fun foregroundify() {
-        if (notificationManager!!.getNotificationChannel(CHANNEL_WHATEVER) == null) {
+    private fun setForegroundNotification() {
+        if (notificationManager!!.getNotificationChannel(CHANNEL_CROP_SEARCH) == null) {
             notificationManager!!.createNotificationChannel(
                 NotificationChannel(
-                    CHANNEL_WHATEVER,
-                    "Whatever", NotificationManager.IMPORTANCE_DEFAULT
+                    CHANNEL_CROP_SEARCH,
+                    "CropSearch", NotificationManager.IMPORTANCE_DEFAULT
                 )
             )
         }
 
         val b: Notification =
-            Notification.Builder(this, CHANNEL_WHATEVER)
+            Notification.Builder(this, CHANNEL_CROP_SEARCH)
                 .setAutoCancel(true)
                 .setDefaults(Notification.DEFAULT_ALL)
                 .setContentTitle(getString(R.string.app_name))

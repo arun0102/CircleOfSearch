@@ -8,7 +8,6 @@ import android.graphics.Paint
 import android.graphics.Path
 import android.graphics.RectF
 import android.util.AttributeSet
-import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 
@@ -16,7 +15,6 @@ import android.view.View
 class PaintView : View {
     private val mFingerPaths: Array<Path?> = arrayOfNulls(MAX_FINGERS)
     private lateinit var mFingerPaint: Paint
-    private lateinit var mSquarePaint: Paint
     private lateinit var mCompletedPaths: ArrayList<Path?>
     private val mPathBounds = RectF()
     private var top = 0f
@@ -46,17 +44,10 @@ class PaintView : View {
         mCompletedPaths = ArrayList()
         mFingerPaint = Paint()
         mFingerPaint.isAntiAlias = true
-        mFingerPaint.setColor(Color.BLUE)
+        mFingerPaint.setColor(Color.WHITE)
         mFingerPaint.style = Paint.Style.STROKE
-        mFingerPaint.strokeWidth = 16f
+        mFingerPaint.strokeWidth = 24f
         mFingerPaint.strokeCap = Paint.Cap.BUTT
-
-        mSquarePaint = Paint()
-        mSquarePaint.isAntiAlias = true
-        mSquarePaint.setColor(Color.BLUE)
-        mSquarePaint.style = Paint.Style.STROKE
-        mSquarePaint.strokeWidth = 16f
-        mSquarePaint.strokeCap = Paint.Cap.BUTT
 
         left = Float.MAX_VALUE
         bottom = Float.MAX_VALUE
