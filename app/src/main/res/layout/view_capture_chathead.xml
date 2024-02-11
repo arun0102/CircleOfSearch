@@ -13,7 +13,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="8dp"
-        android:src="@android:drawable/ic_menu_crop"
+        android:src="@mipmap/ic_launcher_round"
         tools:ignore="ContentDescription"/>
 
     <!--Close button-->
