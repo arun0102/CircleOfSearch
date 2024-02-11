@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Crop Search"
+rootProject.name = "Circle of Search"
 include(":app")
  

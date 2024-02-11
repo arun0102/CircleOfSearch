@@ -4,10 +4,8 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import arun.pkg.cropsearch.service.ChatHeadService
-import arun.pkg.cropsearch.service.ScreenshotService
 
 
 class LaunchingActivity : AppCompatActivity() {
@@ -32,7 +30,7 @@ class LaunchingActivity : AppCompatActivity() {
         } else {
             isPermissionGranted = true
             startService(Intent(this, ChatHeadService::class.java))
-            finish()
         }
+        finish()
     }
 }
