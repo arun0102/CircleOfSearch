@@ -133,7 +133,7 @@ class ScreenshotService : Service() {
                 if (!isCapturedOnce) {
                     isCapturedOnce = true
                     val output = File(
-                        getExternalFilesDir(null),
+                        filesDir,
                         "screenshot.png"
                     )
 
@@ -162,6 +162,7 @@ class ScreenshotService : Service() {
         }.start()
     }
 
+    @SuppressLint("IntentReset")
     private fun shareImage(uri: Uri?) {
         val shareIntent =
             Intent(Intent.ACTION_VIEW, Uri.parse("com.google.android.googlequicksearchbox"))
@@ -200,7 +201,7 @@ class ScreenshotService : Service() {
                 top.toInt() - bottom.toInt()
             )
         val croppedFile = File(
-            getExternalFilesDir(null),
+            filesDir,
             "cropped_screenshot" + ".png"
         )
         try {
@@ -237,7 +238,7 @@ class ScreenshotService : Service() {
         }
         projection?.registerCallback(cb, handler)
         vdisplay = projection?.createVirtualDisplay(
-            "Circle to Search",
+            "Circle of Search",
             mCropView!!.width, mCropView!!.height,
             resources.displayMetrics.densityDpi,
             VIRT_DISPLAY_FLAGS, screenCapture!!.getSurface(), null, handler
