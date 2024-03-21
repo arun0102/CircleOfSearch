@@ -13,9 +13,6 @@ import androidx.core.content.ContextCompat
 import arun.pkg.cropsearch.service.ScreenshotService
 
 class InvisibleActivity : AppCompatActivity() {
-    private val REQUEST_SCREENSHOT = 59706
-    val EXTRA_RESULT_CODE: String = "resultCode"
-    val EXTRA_RESULT_INTENT: String = "resultIntent"
 
     private var mgr: MediaProjectionManager? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -99,5 +96,11 @@ class InvisibleActivity : AppCompatActivity() {
             }
         }
         finish()
+    }
+
+    companion object {
+        private const val REQUEST_SCREENSHOT = 59706
+        private const val EXTRA_RESULT_CODE: String = "resultCode"
+        private const val EXTRA_RESULT_INTENT: String = "resultIntent"
     }
 }
