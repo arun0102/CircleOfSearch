@@ -1,4 +1,4 @@
-# Android Circle To Search
+# Android Circle Of Search
 
 This app is based on Samsung and Google's Circle to Search feature. Because root app access level permissions are not available, a pop-up is shown to get screen recording permission each time.
 
